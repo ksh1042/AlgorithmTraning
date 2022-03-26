@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.roman14.algorithm.SortTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-26T11:07:12" hostname="DESKTOP-JAC6R0V" time="0.021">
+  <properties/>
+  <testcase name="insertionSort()" classname="com.roman14.algorithm.SortTest" time="0.018"/>
+  <testcase name="bubbleSort()" classname="com.roman14.algorithm.SortTest" time="0.001"/>
+  <testcase name="selectionSort()" classname="com.roman14.algorithm.SortTest" time="0.0"/>
+  <testcase name="quickSort()" classname="com.roman14.algorithm.SortTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

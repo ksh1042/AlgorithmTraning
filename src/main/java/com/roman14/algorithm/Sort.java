@@ -22,7 +22,7 @@ public class Sort
   /**
    * 선택정렬 알고리즘
    * 시간복잡도 : O(Math.pow(N,2))
-   * @param numbers - 정렬할 정수 배열
+   * @param numbers - The array to sort
    */
   public static void selectionSort(int [] numbers)
   {
@@ -52,13 +52,13 @@ public class Sort
    * 버블 정렬
    * 시간 복잡도 : O(Math.pow(N,2))
    * ※ 기본적으로 선택 정렬과 동일한 시간 복잡도를 지니나, 교체작업이 빈번히 이뤄지므로 실질적으로 버블 정렬에 비해 정렬 속도가 현저히 느리다.
-   * @param numbers- 정렬할 정수 배열
+   * @param numbers - The array to sort.
    */
   public static void bubbleSort(int [] numbers)
   {
     if(numbers.length < 2) return;
 
-    int temp = 0;
+    int temp;
 
     for(int i=0; i<numbers.length-1; i++)
     {
@@ -76,7 +76,7 @@ public class Sort
    * 삽입 정렬
    * 시간 복잡도 : O(Math.pow(N,2))
    * ※ 기본적으로 선택, 버블 정렬과 동일한 시간복잡도를 가지나 거의 정렬된 상태의 대상에 대해 가장 빠른 속도를 보인다.
-   * @param numbers - 정렬할 정수 배열
+   * @param numbers - The array to sort.
    */
   public static void insertionSort(int [] numbers)
   {
@@ -99,7 +99,7 @@ public class Sort
    * 시간 복잡도 : O(N * log(N))
    * 분할정복 알고리즘을 사용
    * 기준(피벗) 값을 사용
-   * @param numbers - 정렬할 정수 배열
+   * @param numbers - The array to sort.
    */
   public static void quickSort(int [] numbers)
   {
@@ -124,21 +124,20 @@ public class Sort
   {
     int pivot = numbers[(start+end) / 2];
 
-    int temp = 0, s = start, e = end;
+    int temp;
 
-    while( s<=e )
+    while( start<=end )
     {
-      while(pivot > numbers[s]) s++;
-      while(pivot < numbers[e]) e--;
-      if(s <= e)
+      while(pivot > numbers[start]) start++;
+      while(pivot < numbers[end]) end--;
+      if(start <= end)
       {
-        swap(numbers, s, e);
-        s++;
-        e--;
+        swap(numbers, start, end);
+        start++;
+        end--;
       }
     }
-    return s;
-  }
+    return start;
 
   /**
    * 병합 정렬

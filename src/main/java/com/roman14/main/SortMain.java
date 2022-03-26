@@ -25,7 +25,10 @@ public class SortMain
 
     // TODO -> place test Algorithm source over here.
     // !!DEBUG ONLY!!
-    System.out.println(Algorithms.toString( Sort.quickSort(numbers) ));
+
+    Sort.quickSort(numbers);
+
+    System.out.println(Algorithms.toString( numbers ));
 
     //);Sort.quickSort(numbers);
     //Arrays.sort(numbers);
