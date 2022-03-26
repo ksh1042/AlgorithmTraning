@@ -8,9 +8,9 @@ public class Algorithms
 {
   public static int [] randomIntArray(int size, int suffleTimes)
   {
-    int [] result = IntStream.rangeClosed(1,size).map( it -> it ).toArray();
+    int [] result = IntStream.rangeClosed(1,size).toArray();
 
-    int first = 0, second = 0;
+    int first, second;
 
     for(int i=0; i<suffleTimes; i++)
     {
