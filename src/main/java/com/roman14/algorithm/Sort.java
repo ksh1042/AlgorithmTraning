@@ -122,15 +122,15 @@ public class Sort
   }
   private static int partition(int [] numbers, int start, int end)
   {
-    int pivot = numbers[(start+end) / 2];
+    int pivot = numbers[(start + end) / 2];
 
     int temp;
 
-    while( start<=end )
+    while ( start <= end )
     {
-      while(pivot > numbers[start]) start++;
-      while(pivot < numbers[end]) end--;
-      if(start <= end)
+      while ( pivot > numbers[start] ) start++;
+      while ( pivot < numbers[end] ) end--;
+      if ( start <= end )
       {
         swap(numbers, start, end);
         start++;
@@ -138,6 +138,7 @@ public class Sort
       }
     }
     return start;
+  }
 
   /**
    * 병합 정렬
