@@ -5,12 +5,24 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * 정렬 알고리즘
+ * @author MDH
+ * @since 2022.03.24
+ */
 public class Sort
 {
+  private static void swap(int [] numbers, int pos1, int pos2)
+  {
+    int temp = numbers[pos1];
+    numbers[pos1] = numbers[pos2];
+    numbers[pos2] = temp;
+  }
+
   /**
    * 선택정렬 알고리즘
    * 시간복잡도 : O(Math.pow(N,2))
-   * @param numbers - The array to sort.
+   * @param numbers - The array to sort
    */
   public static void selectionSort(int [] numbers)
   {
@@ -54,9 +66,7 @@ public class Sort
       {
         if(numbers[i] > numbers[j])
         {
-          temp = numbers[i];
-          numbers[i] = numbers[j];
-          numbers[j] = temp;
+          swap(numbers, i, j);
         }
       }
     }
@@ -72,16 +82,12 @@ public class Sort
   {
     if(numbers.length < 2) return;
 
-    int j, temp;
-
     for(int i=0; i<numbers.length-1; i++)
     {
-      j = i;
+      int j = i;
       while(numbers[j] >  numbers[j+1])
       {
-        temp = numbers[j];
-        numbers[j] = numbers[j+1];
-        numbers[j+1] = temp;
+        swap(numbers, j, j+1);
         j--;
         if(j < 0) break;
        }
@@ -126,13 +132,66 @@ public class Sort
       while(pivot < numbers[end]) end--;
       if(start <= end)
       {
-        temp = numbers[start];
-        numbers[start] = numbers[end];
-        numbers[end] = temp;
+        swap(numbers, start, end);
         start++;
         end--;
       }
     }
     return start;
+
+  /**
+   * 병합 정렬
+   * 시간 복잡도 : O(N*log(N))
+   * 퀵소트와 비슷한 시간복잡도를 지니나 pivot의 위치에 따라 O(pow(N,2)) 만큼 늘어날 수 있는 퀵소트와는 달리 병합 정렬은 O(N*log(N))의 일정한 시간복잡도를 가진다
+   * @param numbers - 정렬할 정수 배열
+   */
+  public static void mergeSort(int [] numbers)
+  {
+    int [] temp = new int[numbers.length];
+
+    mergeSort(numbers, temp, 0, numbers.length-1);
+  }
+  private static void mergeSort(int [] numbers, int [] temp, int start, int end)
+  {
+    if(start < end){
+      int middle = (start+end) / 2;
+
+      mergeSort(numbers, temp, start, middle);  // 절반 기준으로 앞에 부분의 정렬을 재귀적으로 호출하여 정렬 수행
+      mergeSort(numbers, temp, middle+1, end);
+      merge(numbers, temp, start, middle, end);
+
+      System.out.println(Algorithms.toString(numbers) + " " + Algorithms.toString(temp));
+
+    }
+  }
+  private static void merge(int [] numbers, int [] temp, int start, int middle, int end)
+  {
+    for(int i= start; i<=end; i++)
+    {
+      temp[i] = numbers[i];
+    }
+    int part1 = start;
+    int part2 = middle + 1;
+    int index = start;
+
+    while(part1 <= middle && part2 <= end)
+    {
+      if(temp[part1] <= temp[part2])
+      {
+        numbers[index] = temp[part1];
+        part1++;
+      }
+      else
+      {
+        numbers[index] = temp[part2];
+        part2++;
+      }
+      index++;
+    }
+
+    for(int i=0; i<= middle - part1; i++)
+    {
+      numbers[index + i] = temp[part1 + i];
+    }
   }
 }
