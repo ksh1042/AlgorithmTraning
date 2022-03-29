@@ -13,22 +13,22 @@ public class SortMain
 {
   public static void main(String[] args)
   {
-    final int size = 1500;
+    final int size = 10;
     final int suffleTimes = size * 3;
 
     int [] numbers = Algorithms.randomIntArray(size, suffleTimes);
     //List<Integer> list = Arrays.stream(numbers).mapToObj(Integer::valueOf).collect(Collectors.toList());
 
-    System.out.println(Algorithms.toString(numbers));
+    System.out.println(Arrays.toString(numbers));
 
     long startTime = System.currentTimeMillis();
 
     // TODO -> place test Algorithm source over here.
     // !!DEBUG ONLY!!
 
-    Sort.quickSort(numbers);
+    Sort.heapSort(numbers);
 
-    System.out.println(Algorithms.toString( numbers ));
+    System.out.println(Arrays.toString( numbers ));
 
     //);Sort.quickSort(numbers);
     //Arrays.sort(numbers);

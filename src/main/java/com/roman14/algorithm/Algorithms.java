@@ -25,6 +25,13 @@ public class Algorithms
     return result;
   }
 
+  /**
+   * 정수배열 문자열 출력 메서드
+   * - Arrays.toString(int []) 메서드로 대체 가능함에 따라 Deprecated 처리
+   * @param numbers - 출력할 정수 배열을 입력
+   * @return - 배열을 문자열로 반환
+   */
+  @Deprecated
   public static String toString(int [] numbers)
   {
     return Arrays.stream(numbers).mapToObj(String::valueOf).collect(Collectors.joining(", ", "{", "}"));
