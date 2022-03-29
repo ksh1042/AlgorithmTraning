@@ -252,6 +252,5 @@ public class Sort
       }
       while(target != 0);
     }
-    System.out.println(Arrays.toString(numbers));
   }
 }

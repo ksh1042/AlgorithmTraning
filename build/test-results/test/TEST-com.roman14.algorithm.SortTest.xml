@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.roman14.algorithm.SortTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-03-26T11:07:12" hostname="DESKTOP-JAC6R0V" time="0.021">
+<testsuite name="com.roman14.algorithm.SortTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-03-29T08:19:07" hostname="DESKTOP-JAC6R0V" time="1.827">
   <properties/>
-  <testcase name="insertionSort()" classname="com.roman14.algorithm.SortTest" time="0.018"/>
-  <testcase name="bubbleSort()" classname="com.roman14.algorithm.SortTest" time="0.001"/>
-  <testcase name="selectionSort()" classname="com.roman14.algorithm.SortTest" time="0.0"/>
-  <testcase name="quickSort()" classname="com.roman14.algorithm.SortTest" time="0.001"/>
+  <testcase name="선택 정렬" classname="com.roman14.algorithm.SortTest" time="0.126"/>
+  <testcase name="버블 정렬" classname="com.roman14.algorithm.SortTest" time="0.24"/>
+  <testcase name="삽입 정렬" classname="com.roman14.algorithm.SortTest" time="0.064"/>
+  <testcase name="퀵 정렬" classname="com.roman14.algorithm.SortTest" time="0.011"/>
+  <testcase name="병합 정렬" classname="com.roman14.algorithm.SortTest" time="0.013"/>
+  <testcase name="힙 정렬" classname="com.roman14.algorithm.SortTest" time="1.371"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
